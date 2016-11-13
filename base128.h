@@ -1,6 +1,6 @@
 #pragma once
 
-bool ParseFromByte128(
+inline bool ParseFromByte128(
 		uint32_t &value,
 		char* const buffer,
 		const std::size_t max_bytes,
@@ -17,7 +17,7 @@ bool ParseFromByte128(
 	return false;
 }
 
-bool SerializeToByte128(
+inline bool SerializeToByte128(
 		const uint32_t target,
 		char* const buffer,
 		const std::size_t max_bytes,
