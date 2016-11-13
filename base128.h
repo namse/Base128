@@ -24,7 +24,7 @@ inline bool SerializeToByte128(
 		std::size_t &written) {
 	uint32_t copied = target;
 	std::size_t index = 0;
-	while (copied) {
+	do {
 		if (index > 0) {
 			buffer[index - 1] |= 0b10000000;
 		}
@@ -34,7 +34,7 @@ inline bool SerializeToByte128(
 		if (index > max_bytes) {
 			return false;
 		}
-	}
+	} while (copied);
 	written = index;
 	return true;
 }
